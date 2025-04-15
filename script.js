@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
-      // Check for admin credentials
+      // Admin credentials
       if (username === "admin" && password === "admin123") {
         alert("Welcome, Admin!");
         localStorage.setItem("isAdmin", "true");
@@ -19,17 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Protect Admin Page
+  if (window.location.pathname.includes("admin.html")) {
+    if (localStorage.getItem("isAdmin") !== "true") {
+      alert("Access denied. Admins only.");
+      window.location.href = "index.html";
+    }
+  }
 });
 
-// Admin Page Access Check
-if (window.location.pathname.includes("admin.html")) {
-  if (localStorage.getItem("isAdmin") !== "true") {
-    alert("Access denied. Admins only.");
-    window.location.href = "index.html";
-  }
-}
-
-// Logout function (called from admin.html)
+// Logout Function
 function logout() {
   localStorage.removeItem("isAdmin");
   window.location.href = "index.html";
