@@ -1,37 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="login-container">
-    <h2>Sign Up</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" id="signupPassword" placeholder="Password" required>
-      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-      <div class="show-hide">
-        <input type="checkbox" onclick="toggleSignupPassword()"> Show Password
-      </div>
-      <button type="submit">Create Account</button>
-      <p>Already have an account? <a href="index.html">Login</a></p>
-    </form>
-  </div>
-  <script>
-    function toggleSignupPassword() {
-      let pwd = document.getElementById("signupPassword");
-      let confirmPwd = document.getElementById("confirmPassword");
-      if (pwd.type === "password") {
-        pwd.type = "text";
-        confirmPwd.type = "text";
-      } else {
-        pwd.type = "password";
-        confirmPwd.type = "password";
-      }
-    }
-  </script>
-</body>
-</html>
+<form>
+  <input type="text" placeholder="Username" required>
+  <input type="email" placeholder="Email" required>
+  <input type="password" id="signupPassword" placeholder="Password" required>
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+  <button type="submit">Create Account</button>
+</form>
